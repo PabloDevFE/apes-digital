@@ -1,0 +1,434 @@
+/* =========================================
+   1. VARIÁVEIS (DESIGN SYSTEM)
+   ========================================= */
+:root {
+  /* Cores Base */
+  --bg-color: #FAFAFA; /* Off-white, papel */
+  --text-color: #1A1A1A; /* Tinta preta */
+  --white: #FFFFFF;
+  
+  /* Paleta de Cores (Neo-Brutalism / Hand-Drawn) */
+  --primary-color: #FFDE59; /* Amarelo principal (Destaque) */
+  --primary-hover: #F2CC35;
+  --secondary-color: #A084E8; /* Lilás vibrante (Contraste criativo) */
+  --tertiary-color: #06D6A0; /* Verde-menta (Para coisas positivas/sucesso) */
+  --accent-color: #FF6B6B; /* Coral/Avermelhado (Para alertas ou badges) */
+  --highlight-color: #70D6FF; /* Azul claro (Para efeitos de marca-texto) */
+  
+  /* Bordas e Estilo Hand-Drawn */
+  --border-color: #1A1A1A;
+  --border-width: 3px;
+  --border-radius-btn: 30px; 
+  --border-radius-card: 16px;
+  
+  /* Sombras Sólidas (Efeito Desenho) */
+  --sketch-shadow: 4px 4px 0px var(--border-color);
+  --sketch-shadow-hover: 2px 2px 0px var(--border-color);
+  --sketch-shadow-card: 8px 8px 0px var(--border-color);
+  
+  /* Tipografia */
+  --font-headings: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  
+  /* Espaçamentos */
+  --section-padding: 80px 0;
+}
+
+/* =========================================
+   2. RESETS E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Rolagem suave ao clicar nos links âncora */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia Básica */
+h1, h2, h3, h4 {
+  font-family: var(--font-headings);
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================
+   3. ESTRUTURA E CONTAINERS
+   ========================================= */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+/* =========================================
+   4. LAYOUTS UTILITÁRIOS
+   ========================================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* =========================================
+   5. BOTÕES (O visual Hand-Drawn / WhatsApp)
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: var(--border-radius-btn); /* Arredondado */
+  border: var(--border-width) solid var(--border-color); /* Borda preta grossa */
+  box-shadow: var(--sketch-shadow); /* Sombra dura de desenho */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px); /* Efeito de ser pressionado */
+  box-shadow: var(--sketch-shadow-hover);
+}
+
+/* Botão Amarelo de Destaque */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Botão Transparente com Borda */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+}
+
+/* =========================================
+   6. IMAGENS ESTILO SKETCH (Desenhado)
+   ========================================= */
+.sketch-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--sketch-shadow-card);
+  background-color: var(--white);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Animação flutuante sutil para a imagem do Hero */
+.anim-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   7. HEADER E NAVEGAÇÃO REFINADOS
+   ========================================= */
+#header {
+  padding: 15px 0;
+  border-bottom: var(--border-width) solid var(--border-color);
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 0 rgba(26, 26, 26, 0.05); /* Sombra suave para separar o header da página */
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Container do link da Logo */
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  z-index: 1; /* Cria um contexto de empilhamento para a imagem ficar na frente */
+  text-decoration: none;
+}
+
+/* Imagem da Logo precisa ficar na frente do risco */
+.logo-img {
+  height: 40px; 
+  width: auto;
+  display: block;
+  position: relative;
+  z-index: 2; /* Fica acima da animação (z-index: 0) */
+  transition: transform 0.2s ease;
+}
+
+/* Efeito de marca-texto atrás da logo */
+.logo::after {
+  content: '';
+  position: absolute;
+  /* Ajuste o 'bottom' e o 'height' dependendo do formato da sua logo */
+  bottom: 0px; 
+  left: -5%; /* Começa um pouquinho antes da logo */
+  width: 110%; /* Termina um pouquinho depois da logo */
+  height: 10px; /* Espessura do risco do marca-texto */
+  background-color: var(--primary-color); /* Amarelo vibrante */
+  z-index: 0; /* Fica atrás da imagem */
+  border-radius: 8px;
+  transform: scaleX(0); /* Escondido por padrão */
+  transform-origin: left; /* A animação começa da esquerda para a direita */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Quando passa o mouse na logo */
+.logo:hover::after {
+  transform: scaleX(1);
+}
+
+/* Efeito extra: a logo dá um leve "pulo" pra frente */
+.logo:hover .logo-img {
+  transform: translateY(-2px);
+}
+
+/* Links de Navegação */
+.desktop-nav {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  padding: 0 5px;
+  transition: color 0.2s ease;
+}
+
+/* Efeito "Marca-texto" usando as novas cores */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--highlight-color); /* Usa o azul claro */
+  z-index: -1;
+  border-radius: 4px;
+  transform: scaleX(0); /* Escondido por padrão */
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1); /* Anima como se alguém passasse a caneta */
+}
+
+/* Área de Ações (Botões da direita) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-actions .btn {
+  margin-top: 0;
+  padding: 10px 24px;
+  font-size: 1rem;
+}
+
+/* Botão Ícone Circular (Tema) */
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--secondary-color); /* Lilás vibrante */
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--border-color); /* Sombra redonda de desenho */
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--border-color);
+}
+
+/* Ajuste Responsivo do Header */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none; /* Esconde menu texto no mobile por enquanto */
+  }
+}
+
+/* =========================================
+   8. HERO SECTION & CONTRASTE
+   ========================================= */
+#hero {
+  padding: 100px 0;
+  /* Cria contraste com o header branco */
+  background-color: var(--bg-color); 
+  /* Efeito "Caderno de Esboço" (Pontilhados no fundo) */
+  background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
+  background-size: 24px 24px; /* Distância entre os pontinhos */
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+#hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #333; /* Um pouco mais escuro para ler bem em cima dos pontinhos */
+}
+
+/* =========================================
+   EFEITOS VISUAIS: MARCA-TEXTO
+   ========================================= */
+.marker-highlight {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--text-color);
+  z-index: 1;
+}
+
+/* O "risco" do marca texto */
+.marker-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: -4px;
+  right: -4px;
+  height: 14px; /* Altura do risco da caneta */
+  background-color: var(--primary-color); /* Amarelo da sua paleta */
+  z-index: -1;
+  /* Uma leve rotação para parecer que foi feito à mão de verdade */
+  transform: rotate(-1.5deg); 
+  border-radius: 3px;
+}
+
+/* =========================================
+   IMAGEM COM SOMBRA DROP-SHADOW (Contorno do PNG)
+   ========================================= */
+.hero-drop-img {
+  width: 100%;
+  max-width: 550px; /* Tamanho limite da imagem */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* A MÁGICA: Em vez de box-shadow, usamos drop-shadow para seguir o corte do PNG */
+  filter: drop-shadow(8px 8px 0px var(--border-color));
+  /* Removemos bordas e fundos para o PNG ficar limpo */
+  border: none;
+  background-color: transparent;
+}
+
+/* =========================================
+   9. RESPONSIVO BÁSICO PARA O GRID
+   ========================================= */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .grid-2.reverse .section-img-container {
+    order: -1; /* Faz a imagem subir no mobile */
+  }
+
+  #hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  #header nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

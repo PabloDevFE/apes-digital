@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APES Digital | Evolução Digital para Negócios</title>
+    <meta name="description" content="A APES Digital ajuda negócios a saírem do zero e crescerem no digital com estratégias personalizadas, presença online e geração de resultados." />
+    <link rel="icon" href="src/images/icons/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container header-inner">
+        <!-- LOGO -->
+        <a href="#" class="logo">
+          <img src="src/img/logo-header.png" alt="APES Digital" class="logo-img" />
+          <span class="sr-only">APES Digital</span>
+        </a>
+
+        <!-- NAVEGAÇÃO -->
+        <nav aria-label="Menu principal" class="desktop-nav">
+          <ul class="nav-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#conceito">Evolução</a></li>
+            <li><a href="#pacotes">Planos</a></li>
+            <li><a href="#diferencial">Por que nós?</a></li>
+          </ul>
+        </nav>
+
+        <!-- AÇÕES (Tema + Botão WhatsApp) -->
+        <div class="header-actions">
+          <!-- Botão Modo Escuro (Placeholder para o JS futuro) -->
+          <button id="theme-toggle" class="btn-icon" aria-label="Alternar modo escuro" title="Modo Escuro">
+            <!-- Ícone SVG de Lua com traços grossos -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <a href="#contato" class="btn btn-primary">WhatsApp</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <div class="container grid-2">
+          <div class="hero-text">
+            <h2>Evolua para o digital ou fique para trás</h2>
+            <p>
+              A APES Digital ajuda negócios a saírem do zero e crescerem no mundo digital com 
+              <span class="marker-highlight">estratégia, presença e resultado.</span>
+            </p>
+            <a href="#contato" class="btn btn-primary">Quero evoluir meu negócio</a>
+          </div>
+          <div class="hero-img-container">
+            <!-- PICTURE: Troca a imagem magicamente no celular e no PC -->
+            <picture>
+              <!-- Imagem para telas grandes (PC/Tablet) -->
+              <source media="(min-width: 768px)" srcset="src/img/desenho-hero-large.png">
+              <!-- Imagem padrão / Telas pequenas (Celular) -->
+              <img src="src/img/desenho-hero-small.png" alt="Ilustração de evolução digital" class="hero-drop-img anim-float" />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEMA -->
+      <section id="problema">
+        <div class="container grid-2 reverse">
+          <div class="section-img-container">
+            <!-- IMAGEM PROBLEMA (Ex: Loja física vazia ou pessoa frustrada) -->
+            <img src="src/images/offline-problem.png" alt="Negócio dependendo do offline" class="sketch-img" />
+          </div>
+          <div class="section-text">
+            <h2>Seu negócio ainda depende só do offline?</h2>
+            <p>Muitos negócios ainda dependem apenas de indicação ou ponto físico, enquanto concorrentes crescem todos os dias no digital.</p>
+            <p><strong>Não é falta de esforço. É falta de estrutura.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCEITO -->
+      <section id="conceito">
+        <div class="container grid-2">
+          <div class="section-text">
+            <h2>A evolução nunca parou</h2>
+            <p>Desde as primeiras ferramentas até o mundo digital, quem aprende a usar os recursos certos sobrevive — e cresce.</p>
+            <p>Hoje, o digital é a principal ferramenta de crescimento de qualquer negócio.</p>
+          </div>
+          <div class="section-img-container">
+            <!-- IMAGEM CONCEITO (Ex: A clássica evolução humana, mas terminando no notebook) -->
+            <img src="src/images/evolution-concept.png" alt="Evolução humana para o digital" class="sketch-img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUÇÃO -->
+      <section id="solucao" class="text-center">
+        <div class="container">
+          <h2>Como a APES pode ajudar</h2>
+          <p>Guiamos seu negócio em cada etapa da evolução digital, com estratégias personalizadas e foco em resultado real.</p>
+        </div>
+      </section>
+
+      <!-- PACOTES -->
+      <section id="pacotes">
+        <div class="container">
+          <h2 class="text-center">Escolha sua evolução</h2>
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Base</h3>
+              <p>Saia da pré-história digital</p>
+              <ul>
+                <li>Criação de redes sociais</li>
+                <li>Identidade visual inicial</li>
+                <li>Posts estratégicos</li>
+                <li>WhatsApp Business</li>
+              </ul>
+            </article>
+
+            <article class="card highlight">
+              <h3>Expansão</h3>
+              <p>Use as ferramentas certas</p>
+              <ul>
+                <li>Landing page</li>
+                <li>Copy estratégica</li>
+                <li>Planejamento de conteúdo</li>
+                <li>Estrutura de conversão</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Domínio</h3>
+              <p>Crescimento e escala</p>
+              <ul>
+                <li>Gestão completa</li>
+                <li>Tráfego pago</li>
+                <li>Estratégia contínua</li>
+                <li>Otimizações</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIFERENCIAL -->
+      <section id="diferencial">
+        <div class="container text-center">
+          <h2>Por que escolher a APES?</h2>
+          <ul class="diferenciais-list">
+            <li>✔️ Estratégias personalizadas</li>
+            <li>✔️ Foco em crescimento real</li>
+            <li>✔️ Comunicação simples e direta</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section id="contato" class="text-center">
+        <div class="container">
+          <h2>Seu negócio não precisa ficar para trás</h2>
+          <p>Comece agora sua evolução digital com a APES.</p>
+          <a href="https://wa.me/seunumeroaqui" class="btn btn-primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>&copy; <span id="year"></span> APES Digital. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="src/js/index.js"></script>
+  </body>
+</html>
