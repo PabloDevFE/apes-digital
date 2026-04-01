@@ -63,6 +63,47 @@
 .marker-mint::after   { background-color: var(--tertiary-color); }
 .marker-coral::after  { background-color: var(--accent-color); }
 
+/* =========================================
+   TEXTURAS DE FUNDO (CLEAN & CRIATIVAS)
+   ========================================= */
+
+/* 1. SEÇÕES CONCEITO E SOLUÇÃO (Papel Quadriculado) */
+#problema, #conceito, #solucao {
+  background-color: var(--white);
+  /* Desenha linhas verticais e horizontais bem clarinhas (3% de opacidade) */
+  background-image: 
+    linear-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px; /* Tamanho do "quadradinho" da folha */
+}
+
+/* Garante que a borda de baixo se mantenha em ambas */
+#conceito { border-bottom: var(--border-width) solid var(--border-color); }
+#solucao { border-bottom: var(--border-width) solid var(--border-color); }
+
+
+/* 2. SEÇÃO DIFERENCIAL (Malha de Sinais de Adição / Plus Grid) */
+#diferencial {
+  background-color: var(--bg-color); /* Fundo bege clarinho */
+  /* SVG injetado criando cruzes (+) minúsculas e charmosas no fundo */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 15 L20 25 M15 20 L25 20' stroke='rgba(26,26,26,0.06)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+
+/* 3. SEÇÃO CONTATO E FORMULÁRIO (Hachuras Diagonais) */
+#contato {
+  background-color: var(--white);
+  /* Cria riscos diagonais fininhos como se fosse um lápis sombreando o fundo */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 15px,
+    rgba(26, 26, 26, 0.03) 15px,
+    rgba(26, 26, 26, 0.03) 16px /* Linha de 1px de espessura */
+  );
+}
 
 /* =========================================
    2. RESETS E CONFIGURAÇÕES GERAIS
@@ -517,6 +558,624 @@ section {
   #conceito .container::before,
   #conceito .container::after {
     display: none;
+  }
+}
+
+/* =========================================
+   11. ANIMAÇÕES DE SURGIMENTO (SCROLL REVEAL)
+   ========================================= */
+.reveal {
+  opacity: 0;
+  /* Começa um pouco mais para baixo e levemente encolhido */
+  transform: translateY(40px) scale(0.95); 
+  /* A mágica do "pulo" cartoonesco está neste cubic-bezier */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Classes para fazer elementos surgirem um depois do outro (efeito escadinha) */
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.30s; }
+.delay-3 { transition-delay: 0.45s; }
+
+/* =========================================
+   12. SEÇÃO SOLUÇÃO E CARROSSEL INFINITO
+   ========================================= */
+#solucao {
+  background-color: var(--white);
+  padding: 80px 0 100px 0; /* Mais espaço embaixo para caber a faixa torta */
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+#solucao .container {
+  margin-bottom: 50px;
+}
+
+/* Evita que a faixa crie uma barra de rolagem horizontal no site */
+.overflow-hidden {
+  overflow-x: hidden;
+}
+
+/* A Faixa (Fita colada de fora a fora) */
+.marquee-wrapper {
+  background-color: var(--primary-color); /* Amarelo chamativo */
+  border-top: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding: 15px 0;
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  /* MÁGICA: Rotaciona a fita e estica ela além da tela para não mostrar os cantos cortados */
+  transform: rotate(-3deg) scale(1.05); 
+  box-shadow: 0 10px 0 rgba(26, 26, 26, 0.05);
+}
+
+/* A pista onde os itens correm */
+.marquee-track {
+  display: flex;
+  gap: 3rem; /* Espaço entre as palavras */
+  align-items: center;
+  width: max-content;
+  /* 25 segundos para dar a volta, constante (linear) e infinito */
+  animation: scroll-marquee 25s linear infinite;
+}
+
+/* Efeito Bônus: Se o usuário passar o mouse, a faixa pausa para ele ler */
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Os textos dos serviços */
+.marquee-item {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* A estrelinha que separa os serviços */
+.marquee-star {
+  font-size: 1.8rem;
+  color: var(--bg-color); /* Fica clarinha */
+  -webkit-text-stroke: 2px var(--border-color); /* Ganha borda preta (Traço) */
+}
+
+/* A animação de rolagem */
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  /* Ele rola exatamente 50% (o tamanho do Conjunto 1).
+     Como o Conjunto 2 é idêntico, o salto para o 0% é invisível! */
+  100% { transform: translateX(-50%); }
+}
+
+/* =========================================
+   13. SEÇÃO DE PACOTES (CARDS DE PLANOS)
+   ========================================= */
+#pacotes {
+  background-color: var(--bg-color);
+  padding: 100px 0;
+  border-bottom: var(--border-width) solid var(--border-color);
+  /* Adiciona a malha de caderninho novamente para os planos de fundo */
+  background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
+#pacotes p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+/* O Grid que alinha os 3 cards lado a lado */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch; /* Faz todos os cards terem a mesma altura */
+}
+
+/* O Card Base (Cartão em branco) */
+.card {
+  background-color: var(--white);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-card);
+  padding: 40px 30px;
+  box-shadow: var(--sketch-shadow-card); /* Sombra pesada */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/* Efeito ao passar o mouse no Card */
+.card:hover {
+  transform: translateY(-10px); /* O card levanta */
+  box-shadow: 12px 12px 0px var(--border-color); /* A sombra aumenta */
+}
+
+/* O Card em Destaque (Fundo Amarelo) */
+.card.highlight {
+  background-color: var(--primary-color);
+  transform: scale(1.05); /* Um pouquinho maior que os outros */
+  z-index: 2; /* Fica por cima */
+}
+
+.card.highlight:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* Selo "Mais Escolhido" estilo post-it */
+.card-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: var(--accent-color); /* Coral vibrante */
+  color: var(--white);
+  font-family: var(--font-headings);
+  font-weight: 700;
+  padding: 8px 16px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 20px;
+  transform: rotate(10deg); /* Colado torto */
+  box-shadow: 4px 4px 0px var(--border-color);
+  z-index: 3;
+}
+
+/* Textos dentro do Card */
+.card-header {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed var(--border-color); /* Linha tracejada separando o cabeçalho */
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.target-audience {
+  font-size: 1rem !important;
+  color: #555;
+  margin-bottom: 0 !important;
+  line-height: 1.4;
+}
+
+/* A Lista de Benefícios (Checklist) */
+.card-features {
+  flex-grow: 1; /* Empurra o botão pro fundo */
+  margin-bottom: 30px;
+}
+
+.card-features li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+/* Criando o ícone de Check (✔️) com CSS (Super leve) */
+.card-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  /* SVG do Visto (Check) */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306D6A0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+
+/* Modifica a cor do Check no card amarelo para dar contraste */
+.card.highlight .card-features li::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A1A' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+}
+
+/* Botão ocupando 100% da largura no final do card */
+.card-btn {
+  width: 100%;
+}
+
+/* Botão escuro no card em destaque (para dar contraste com o fundo amarelo) */
+.card.highlight .btn-primary {
+  background-color: var(--text-color);
+  color: var(--white);
+}
+
+.card.highlight .btn-primary:hover {
+  background-color: var(--white);
+  color: var(--text-color);
+}
+
+/* Responsividade: Quebrando os cards no celular e tablet */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+    gap: 50px; /* Mais espaço vertical */
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .card.highlight {
+    transform: scale(1); /* Tira o aumento de tamanho no celular para não bugar a tela */
+  }
+
+  .card.highlight:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================================
+   14. SEÇÃO DIFERENCIAL (VERSÃO CLEAN)
+   ========================================= */
+#diferencial {
+  background-color: var(--bg-color); /* Fundo bege claro do site para dar contraste com os cards brancos */
+  padding: 100px 0;
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+#diferencial p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Grid para os cards */
+.diferencial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* Base do Card Clean com fundo de folha de caderno suave */
+.clean-note {
+  position: relative;
+  background-color: var(--white);
+  
+  /* Efeito de linhas de caderno bem suaves (apenas 4% de opacidade no preto) */
+  background-image: repeating-linear-gradient(
+    transparent, 
+    transparent 28px, 
+    rgba(0, 0, 0, 0.04) 28px, 
+    rgba(0, 0, 0, 0.04) 29px /* Linha fina de 1px */
+  );
+  background-attachment: local; /* Faz a linha rolar junto com o texto caso tenha muito conteúdo */
+  
+  padding: 40px 30px 30px 30px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 8px; 
+  box-shadow: var(--sketch-shadow); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/* Rotação quase imperceptível só para dar um charme (1 grau) */
+.clean-note:nth-child(odd) { transform: rotate(-1deg); }
+.clean-note:nth-child(even) { transform: rotate(1deg); }
+
+/* Hover: levanta suavemente */
+.clean-note:hover {
+  transform: translateY(-5px) rotate(0deg);
+  box-shadow: 8px 8px 0px var(--border-color);
+  z-index: 10;
+}
+
+/* O pedaço de Fita (Tape) - Agora mais sutil e realista */
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 24px;
+  background-color: #E8E8E8; /* Cinza bem clarinho (fita crepe) */
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  box-shadow: 1px 1px 0px rgba(26, 26, 26, 0.2);
+}
+
+/* Os círculos coloridos contidos atrás dos ícones */
+.icon-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+/* As cores aplicadas APENAS nos círculos */
+.bg-yellow { background-color: var(--primary-color); }
+.bg-mint   { background-color: var(--tertiary-color); }
+.bg-blue   { background-color: var(--highlight-color); }
+.bg-coral  { background-color: var(--accent-color); }
+
+.clean-note h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.clean-note p {
+  font-size: 1.05rem;
+  margin-bottom: 0 !important;
+  color: #444; /* Cinza escuro para leitura confortável */
+  line-height: 1.6;
+}
+
+/* Responsivo para celulares (Grid vira 1 coluna) */
+@media (max-width: 768px) {
+  .diferencial-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* =========================================
+   15. FORMULÁRIO DE CONTATO E ORÇAMENTO
+   ========================================= */
+#contato {
+  background-color: var(--white);
+  padding: 100px 0;
+}
+
+.contato-text h2 {
+  font-size: 3rem;
+}
+
+.contato-lista {
+  margin-top: 30px;
+}
+
+.contato-lista li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* O "Caderno" do Formulário */
+.sketch-form {
+  background-color: var(--bg-color); /* Bege/Off-white */
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-card);
+  padding: 40px;
+  box-shadow: var(--sketch-shadow-card);
+  /* Efeito caderno espiral na borda esquerda */
+  background-image: repeating-linear-gradient(transparent, transparent 28px, #ccc 28px, #ccc 30px);
+  background-attachment: local;
+}
+
+/* Grupos de Inputs */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+/* Campos de digitação (Inputs e Textarea) */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--white);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--border-color); /* Sombra dura de desenho */
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite esticar só para baixo */
+  min-height: 120px;
+}
+
+/* Efeito ao clicar para digitar (Foco) */
+.form-group input:focus,
+.form-group textarea:focus {
+  transform: translate(3px, 3px); /* Campo "afunda" */
+  box-shadow: 1px 1px 0px var(--border-color); /* Sombra diminui */
+  background-color: #ffffe0; /* Fica levemente amarelinho para destacar */
+}
+
+/* Ajustes do Input do Plano Selecionado (Bloqueado) */
+.input-plano-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#plano {
+  background-color: var(--primary-color); /* Amarelo da sua paleta */
+  font-weight: 700;
+  cursor: not-allowed; /* Mostra que não pode editar */
+}
+
+#plano:focus {
+  transform: none;
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+/* Botãozinho de limpar/remover o plano */
+.btn-clear {
+  position: absolute;
+  right: 15px;
+  background: var(--accent-color);
+  color: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.btn-clear:hover {
+  transform: scale(1.1);
+}
+
+/* Botão de Enviar gigante */
+.form-submit-btn {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 18px;
+  margin-top: 10px;
+}
+
+/* Responsivo do Formulário */
+@media (max-width: 768px) {
+  .sketch-form {
+    padding: 25px 20px;
+  }
+}
+
+/* =========================================
+   16. FOOTER (RODAPÉ)
+   ========================================= */
+#footer {
+  background-color: var(--text-color); /* Fundo escuro */
+  color: var(--bg-color); /* Texto claro */
+  padding: 80px 0 30px 0;
+  border-top: var(--border-width) solid var(--border-color);
+}
+
+#footer h2, 
+#footer h3 {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+#footer p {
+  color: #E0E0E0; /* Cinza clarinho para leitura confortável no fundo preto */
+  max-width: 400px;
+}
+
+/* Ícones Sociais (Estilo Adesivos) */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px; /* Quadrado levemente arredondado */
+  border: 2px solid var(--border-color); /* Borda preta, mesmo no fundo escuro, para manter o traço do desenho */
+  color: var(--text-color);
+  box-shadow: 3px 3px 0px var(--primary-color); /* A sombra é AMARELA para brilhar no fundo escuro! */
+  transition: all 0.2s ease;
+}
+
+.social-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--primary-color);
+}
+
+/* Links Rápidos */
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #E0E0E0;
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Efeito de setinha ao passar o mouse no link */
+.footer-links a:hover {
+  color: var(--primary-color);
+  padding-left: 8px; /* Dá um passinho para a direita */
+}
+
+.footer-links a::before {
+  content: '>';
+  color: var(--primary-color);
+  margin-right: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+/* Linha Final de Copyright */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.2); /* Linha tracejada clarinha separando */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Botão de Voltar ao Topo */
+.back-to-top {
+  background-color: var(--white);
+  color: var(--text-color);
+  font-family: var(--font-headings);
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px var(--primary-color);
+  transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+/* Responsivo do Footer */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
   }
 }
 
