@@ -18,6 +18,8 @@
   /* Bordas e Estilo Hand-Drawn */
   --border-color: #1A1A1A;
   --border-width: 3px;
+  --border-width-sections:1.5px;
+  --border-color-sections:#1a1a1a4f;
   --border-radius-btn: 30px; 
   --border-radius-card: 16px;
   
@@ -104,6 +106,8 @@
     rgba(26, 26, 26, 0.03) 16px /* Linha de 1px de espessura */
   );
 }
+
+
 
 /* =========================================
    2. RESETS E CONFIGURAÇÕES GERAIS
@@ -263,16 +267,16 @@ section {
 }
 
 /* =========================================
-   7. HEADER E NAVEGAÇÃO REFINADOS
+   7. HEADER E NAVEGAÇÃO (MOLDURA ESCURA)
    ========================================= */
-#header {
+#header.dark-header {
   padding: 15px 0;
-  border-bottom: var(--border-width) solid var(--border-color);
-  background-color: var(--white);
+  background-color: var(--text-color); /* Fundo escuro */
+  border-bottom: 1.5px solid var(--primary-color); 
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 0 rgba(26, 26, 26, 0.05); /* Sombra suave para separar o header da página */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header-inner {
@@ -281,72 +285,31 @@ section {
   align-items: center;
 }
 
-.logo-img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
+/* Inverte a cor da logo para branco (se ela for preta) */
+.logo-invert { filter: invert(1)}
 
-/* Container do link da Logo */
-.logo {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  z-index: 1; /* Cria um contexto de empilhamento para a imagem ficar na frente */
-  text-decoration: none;
-}
-
-/* Imagem da Logo precisa ficar na frente do risco */
 .logo-img {
   height: 40px; 
   width: auto;
   display: block;
   position: relative;
-  z-index: 2; /* Fica acima da animação (z-index: 0) */
+  z-index: 2;
   transition: transform 0.2s ease;
 }
 
-/* Efeito de marca-texto atrás da logo */
-.logo::after {
-  content: '';
-  position: absolute;
-  /* Ajuste o 'bottom' e o 'height' dependendo do formato da sua logo */
-  bottom: 0px; 
-  left: -5%; /* Começa um pouquinho antes da logo */
-  width: 110%; /* Termina um pouquinho depois da logo */
-  height: 10px; /* Espessura do risco do marca-texto */
-  background-color: var(--primary-color); /* Amarelo vibrante */
-  z-index: 0; /* Fica atrás da imagem */
-  border-radius: 8px;
-  transform: scaleX(0); /* Escondido por padrão */
-  transform-origin: left; /* A animação começa da esquerda para a direita */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Quando passa o mouse na logo */
-.logo:hover::after {
-  transform: scaleX(1);
-}
-
-/* Efeito extra: a logo dá um leve "pulo" pra frente */
-.logo:hover .logo-img {
-  transform: translateY(-2px);
-}
-
-/* Links de Navegação */
-.desktop-nav {
-  display: flex;
-}
+/* ==== NAVEGAÇÃO (NAV) ==== */
+.desktop-nav { display: flex; }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
 }
 
 .nav-links a {
+  color: var(--white);
   font-family: var(--font-headings);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   position: relative;
   z-index: 1;
@@ -354,7 +317,7 @@ section {
   transition: color 0.2s ease;
 }
 
-/* Efeito "Marca-texto" usando as novas cores */
+/* Risco do marca-texto Amarelo nos links */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -362,57 +325,43 @@ section {
   left: 0;
   width: 100%;
   height: 8px;
-  background-color: var(--highlight-color); /* Usa o azul claro */
+  background-color: var(--accent-color); 
   z-index: -1;
   border-radius: 4px;
-  transform: scaleX(0); /* Escondido por padrão */
+  transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.nav-links a:hover::after {
-  transform: scaleX(1); /* Anima como se alguém passasse a caneta */
-}
+.nav-links a:hover::after { transform: scaleX(1); }
 
-/* Área de Ações (Botões da direita) */
+
+
+/* ==== AÇÕES (DIREITA) ==== */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.header-actions .btn {
+/* Botão WhatsApp no Dark Header */
+.header-btn-wa {
   margin-top: 0;
   padding: 10px 24px;
   font-size: 1rem;
+  border-color: var(--white);
+  box-shadow: 3px 3px 0px var(--white);
 }
 
-/* Botão Ícone Circular (Tema) */
-.btn-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: var(--border-width) solid var(--border-color);
-  background-color: var(--secondary-color); /* Lilás vibrante */
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 3px 3px 0px var(--border-color); /* Sombra redonda de desenho */
-  transition: all 0.2s ease;
-}
-
-.btn-icon:hover {
+.header-btn-wa:hover {
+  box-shadow: 1px 1px 0px #333;
+  border-color: #333;
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--border-color);
 }
 
-/* Ajuste Responsivo do Header */
-@media (max-width: 900px) {
-  .desktop-nav {
-    display: none; /* Esconde menu texto no mobile por enquanto */
-  }
+/* Responsividade */
+@media (max-width: 950px) {
+  .desktop-nav { display: none; }
 }
 
 /* =========================================
@@ -425,7 +374,7 @@ section {
   /* Efeito "Caderno de Esboço" (Pontilhados no fundo) */
   background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
   background-size: 24px 24px; /* Distância entre os pontinhos */
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
 }
 
 #hero h2 {
@@ -445,18 +394,16 @@ section {
 /* O Problema volta para o fundo branco para contrastar com o Hero (que tem pontinhos) */
 #problema {
   background-color: var(--white);
-  border-bottom: var(--border-width) solid var(--border-color);
-}
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);}
 
 /* O Conceito usa o fundo Off-white, criando um efeito de listras horizontais grandes no site */
 #conceito {
   background-color: var(--bg-color);
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
 }
 
 /* =========================================
    10. ADESIVOS DE FUNDO (ESTILO WHATSAPP)
-   - Feitos com SVG Inline para ser 100% leve
    ========================================= */
 
 /* Prepara os containers para segurar os adesivos */
@@ -588,7 +535,7 @@ section {
 #solucao {
   background-color: var(--white);
   padding: 80px 0 100px 0; /* Mais espaço embaixo para caber a faixa torta */
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
 }
 
 #solucao .container {
@@ -660,8 +607,7 @@ section {
 #pacotes {
   background-color: var(--bg-color);
   padding: 100px 0;
-  border-bottom: var(--border-width) solid var(--border-color);
-  /* Adiciona a malha de caderninho novamente para os planos de fundo */
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
   background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
   background-size: 24px 24px;
 }
@@ -818,7 +764,7 @@ section {
 #diferencial {
   background-color: var(--bg-color); /* Fundo bege claro do site para dar contraste com os cards brancos */
   padding: 100px 0;
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
 }
 
 #diferencial p {
@@ -926,6 +872,16 @@ section {
 #contato {
   background-color: var(--white);
   padding: 100px 0;
+}
+
+.honey-field {
+  /* Não usamos display: none pois alguns robôs espertos detectam isso.
+     Em vez disso, jogamos o campo para fora do planeta Terra invisível. */
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+  z-index: -1;
 }
 
 .contato-text h2 {

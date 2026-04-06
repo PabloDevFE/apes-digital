@@ -17,12 +17,12 @@
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header id="header">
+    <!-- HEADER (Dark Mode / Estilo Footer) -->
+    <header id="header" class="dark-header">
       <div class="container header-inner">
         <!-- LOGO -->
         <a href="#" class="logo">
-          <img src="src/img/logo-header.png" alt="APES Digital" class="logo-img" />
+          <img src="src/img/logo-header.png" alt="APES Digital" class="logo-img logo-invert" />
           <span class="sr-only">APES Digital</span>
         </a>
 
@@ -30,23 +30,16 @@
         <nav aria-label="Menu principal" class="desktop-nav">
           <ul class="nav-links">
             <li><a href="#hero">Início</a></li>
-            <li><a href="#conceito">Evolução</a></li>
             <li><a href="#pacotes">Planos</a></li>
-            <li><a href="#diferencial">Por que nós?</a></li>
+            <li><a href="#diferencial">Diferencial</a></li>
+            <li><a href="#contato">Evoluir</a></li>
           </ul>
         </nav>
 
         <!-- AÇÕES (Tema + Botão WhatsApp) -->
         <div class="header-actions">
-          <!-- Botão Modo Escuro (Placeholder para o JS futuro) -->
-          <button id="theme-toggle" class="btn-icon" aria-label="Alternar modo escuro" title="Modo Escuro">
-            <!-- Ícone SVG de Lua com traços grossos -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-
-          <a href="#contato" class="btn btn-primary">WhatsApp</a>
+          <!-- Botão WhatsApp -->
+          <a href="https://wa.me/seunumeroaqui" class="btn btn-primary header-btn-wa" target="_blank">WhatsApp</a>
         </div>
       </div>
     </header>
@@ -104,7 +97,7 @@
           <div class="section-img-container reveal delay-1">
             <!-- PICTURE para o JPG: Telas grandes e pequenas -->
             <picture>
-              <source media="(min-width: 768px)" srcset="src/img/conceito-large.jpg">
+              <source media="(min-width: 768px)" srcset="src/img/teste.jpg">
               <img src="src/img/conceito-small.jpg" alt="Evolução humana para o digital" class="sketch-img rotate-right" />
             </picture>
           </div>
@@ -273,6 +266,11 @@
           <!-- Formulário da Direita -->
           <div class="contato-form-container reveal delay-1">
             <form id="orcamento-form" class="sketch-form">
+              <!-- HONEYPOT (Isca Anti-Spam Oculta) -->
+              <div class="honey-field" aria-hidden="true">
+                <label for="website-url">Se você for humano, deixe este campo em branco:</label>
+                <input type="text" id="website-url" name="website-url" tabindex="-1" autocomplete="off">
+              </div>
               <!-- Nome -->
               <div class="form-group">
                 <label for="nome">Nome ou Empresa *</label>
