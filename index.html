@@ -6,6 +6,25 @@
     <title>APES Digital | Evolução Digital para Negócios</title>
     <meta name="description" content="A APES Digital ajuda negócios a saírem do zero e crescerem no digital com estratégias personalizadas, presença online e geração de resultados." />
     <link rel="icon" href="src/images/icons/favicon.ico" />
+    <link rel="canonical" href="https://www.apesdigital.com" />
+
+    <!--Icons-->
+    <!-- Favicon padrão -->
+  <link rel="icon" href="src/img/icons/favicon.ico" sizes="any">
+
+  <!-- PNGs (navegadores modernos) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="src/img/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/img/icons/favicon-32x32.png">
+
+  <!-- Android / Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="src/img/icons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="src/img/icons/android-chrome-512x512.png">
+
+  <!-- Apple (iPhone/iPad) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="src/img/icons/apple-touch-icon.png">
+
+  <!-- Manifest (PWA) -->
+  <link rel="manifest" href="src/img/icons/site.webmanifest">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +33,26 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="src/css/style.css" />
+
+    <!-- SCHEMA MARKUP (SEO AVANÇADO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "APES Digital",
+      "image": "https://www.apesdigital.com/src/img/logo.png",
+      "@id": "https://www.apesdigital.com",
+      "url": "https://www.apesdigital.com",
+      "telephone": "+5531982340580",
+      "description": "A APES Digital ajuda negócios a saírem do zero e crescerem no mundo digital com marketing, criação de sites e gestão de tráfego pago.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sete Lagoas",
+        "addressRegion": "Minas Gerais",
+        "addressCountry": "BR"
+      },
+    }
+    </script>
   </head>
 
   <body>
@@ -39,7 +78,7 @@
         <!-- AÇÕES (Tema + Botão WhatsApp) -->
         <div class="header-actions">
           <!-- Botão WhatsApp -->
-          <a href="https://wa.me/seunumeroaqui" class="btn btn-primary header-btn-wa" target="_blank">WhatsApp</a>
+          <a href="https://wa.me/31982340580" class="btn btn-primary header-btn-wa" target="_blank">WhatsApp</a>
         </div>
       </div>
     </header>
@@ -49,7 +88,7 @@
       <section id="hero">
         <div class="container grid-2">
           <div class="hero-text reveal">
-            <h2>Evolua para o digital ou fique para trás</h2>
+            <h1>Evolua para o digital ou fique para trás</h1>
             <p>
               A APES Digital ajuda negócios a saírem do zero e crescerem no mundo digital com 
               <span class="marker-highlight marker-yellow">estratégia, presença e resultado.</span>
@@ -57,12 +96,14 @@
             <a href="#contato" class="btn btn-primary">Quero evoluir meu negócio</a>
           </div>
           <div class="hero-img-container reveal delay-1">
-            <!-- PICTURE: Troca a imagem magicamente no celular e no PC -->
             <picture>
               <!-- Imagem para telas grandes (PC/Tablet) -->
-              <source media="(min-width: 768px)" srcset="src/img/desenho-hero-large.png">
+              <source media="(min-width: 768px)" srcset="
+              src/img/desenho-hero-large.webp">
               <!-- Imagem padrão / Telas pequenas (Celular) -->
-              <img src="src/img/desenho-hero-small.png" alt="Ilustração de evolução digital" class="hero-drop-img anim-float" />
+              <img src="src/img/desenho-hero-small.webp" 
+              alt="Ilustração de evolução digital" 
+              class="hero-drop-img anim-float" />
             </picture>
           </div>
         </div>
@@ -71,11 +112,14 @@
       <!-- PROBLEMA -->
       <section id="problema">
         <div class="container grid-2 reverse">
-          <div class="section-img-container reveal">
-            <!-- PICTURE para o JPG: Telas grandes e pequenas -->
+          <div class="section-img-container reveal img-container-problema">
             <picture>
-              <source media="(min-width: 768px)" srcset="src/img/teste.jpg">
-              <img src="src/img/problema-small.jpg" alt="Negócio dependendo do offline" class="sketch-img rotate-left" />
+              <source media="(min-width: 768px)" 
+              srcset="src/img/offline-large.webp">
+              <img src="src/img/offline-small.webp" 
+              alt="Negócio dependendo do offline" 
+              class="sketch-img rotate-left"
+              loading="lazy" />
             </picture>
           </div>
           <div class="section-text eal delay-1">
@@ -94,11 +138,14 @@
             <p>Desde as primeiras ferramentas até o mundo digital, quem aprende a usar os recursos certos sobrevive — e cresce.</p>
             <p>Hoje, o digital é a <span class="marker-highlight marker-yellow">principal ferramenta de crescimento</span> de qualquer negócio.</p>
           </div>
-          <div class="section-img-container reveal delay-1">
-            <!-- PICTURE para o JPG: Telas grandes e pequenas -->
+          <div class="section-img-container reveal delay-1 img-container-evolucao">
             <picture>
-              <source media="(min-width: 768px)" srcset="src/img/teste.jpg">
-              <img src="src/img/conceito-small.jpg" alt="Evolução humana para o digital" class="sketch-img rotate-right" />
+              <source media="(min-width: 768px)" 
+              srcset="src/img/evolucao-large.webp">
+              <img src="src/img/evolucao-small.webp" 
+              alt="Evolução humana para o digital" 
+              class="sketch-img rotate-right img-conceito"
+              loading="lazy" />
             </picture>
           </div>
         </div>
@@ -342,7 +389,7 @@
           <ul>
             <li><a href="#hero">Início</a></li>
             <li><a href="#conceito">A Evolução</a></li>
-            <li><a href="#pacotes">Planos e Preços</a></li>
+            <li><a href="#pacotes">Planos</a></li>
             <li><a href="#contato">Solicitar Orçamento</a></li>
           </ul>
         </div>
