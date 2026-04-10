@@ -2,14 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.apesdigital.com/</loc>
-    
-    <!-- Data da última vez que você alterou o site (Formato: Ano-Mês-Dia) -->
-    <lastmod>2023-11-20</lastmod>
-    
-    <!-- Frequência com que o site costuma ser atualizado -->
+    <lastmod>2026-04-10</lastmod>
+
     <changefreq>monthly</changefreq>
-    
-    <!-- Prioridade dessa página (Como é uma página única, a prioridade é máxima: 1.0) -->
+
     <priority>1.0</priority>
   </url>
 </urlset>

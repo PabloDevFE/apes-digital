@@ -1,199 +1,249 @@
-/* =========================================
-   1. VARIÁVEIS (DESIGN SYSTEM)
-   ========================================= */
+.grid-2,
+.nav-links {
+  align-items: center;
+}
+.btn,
+.success-box,
+.text-center {
+  text-align: center;
+}
+#conceito,
+#diferencial,
+#solucao {
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+#conceito,
+#contato,
+#problema,
+#solucao {
+  background-color: var(--white);
+  background-color: var(--white);
+}
+.btn-outline,
+.btn-primary,
+.marker-highlight,
+a,
+body,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-color);
+}
+#conceito .container::after,
+#conceito .container::before,
+#problema .container::after,
+#problema .container::before {
+  filter: drop-shadow(3px 3px 0px var(--border-color));
+  content: "";
+}
+.overflow-hidden,
+body {
+  overflow-x: hidden;
+}
+#hero,
+#pacotes {
+  background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+#pacotes p,
+#solucao .container {
+  margin-bottom: 50px;
+}
+#contato,
+#diferencial,
+#hero,
+#pacotes {
+  padding: 100px 0;
+}
+#footer,
+#header.dark-header,
+.card.highlight .btn-primary {
+  background-color: var(--text-color);
+}
 :root {
-  /* Cores Base */
-  --bg-color: #FAFAFA; /* Off-white, papel */
-  --text-color: #1A1A1A; /* Tinta preta */
-  --white: #FFFFFF;
-  
-  /* Paleta de Cores (Neo-Brutalism / Hand-Drawn) */
-  --primary-color: #FFDE59; /* Amarelo principal (Destaque) */
-  --primary-hover: #F2CC35;
-  --secondary-color: #A084E8; /* Lilás vibrante (Contraste criativo) */
-  --tertiary-color: #06D6A0; /* Verde-menta (Para coisas positivas/sucesso) */
-  --accent-color: #FF6B6B; /* Coral/Avermelhado (Para alertas ou badges) */
-  --highlight-color: #70D6FF; /* Azul claro (Para efeitos de marca-texto) */
-  
-  /* Bordas e Estilo Hand-Drawn */
-  --border-color: #1A1A1A;
+  --bg-color: #fafafa;
+  --text-color: #1a1a1a;
+  --white: #ffffff;
+  --primary-color: #ffde59;
+  --primary-hover: #f2cc35;
+  --secondary-color: #a084e8;
+  --tertiary-color: #06d6a0;
+  --accent-color: #ff6b6b;
+  --highlight-color: #70d6ff;
+  --border-color: #1a1a1a;
   --border-width: 3px;
-  --border-width-sections:1.5px;
-  --border-color-sections:#1a1a1a4f;
-  --border-radius-btn: 30px; 
+  --border-width-sections: 1.5px;
+  --border-color-sections: #1a1a1a4f;
+  --border-radius-btn: 30px;
   --border-radius-card: 16px;
-  
-  /* Sombras Sólidas (Efeito Desenho) */
   --sketch-shadow: 4px 4px 0px var(--border-color);
   --sketch-shadow-hover: 2px 2px 0px var(--border-color);
   --sketch-shadow-card: 8px 8px 0px var(--border-color);
-  
-  /* Tipografia */
-  --font-headings: 'Fredoka', sans-serif;
-  --font-body: 'Nunito', sans-serif;
-  
-  /* Espaçamentos */
+  --font-headings: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
   --section-padding: 80px 0;
 }
-
-/* =========================================
-   EFEITOS VISUAIS: MARCA-TEXTO
-   ========================================= */
 .marker-highlight {
   position: relative;
   display: inline-block;
   font-weight: 700;
-  color: var(--text-color);
   z-index: 1;
 }
-
+.btn,
+.form-group label,
+.nav-links a,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}
 .marker-highlight::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 3px;
   left: -4px;
   right: -4px;
-  height: 14px; 
+  height: 14px;
   z-index: -1;
-  transform: rotate(-1.5deg); 
+  transform: rotate(-1.5deg);
   border-radius: 3px;
 }
-
-/* Cores específicas para dar vida! */
-.marker-yellow::after { background-color: var(--primary-color); }
-.marker-lilac::after  { background-color: var(--secondary-color); }
-.marker-mint::after   { background-color: var(--tertiary-color); }
-.marker-coral::after  { background-color: var(--accent-color); }
-
-/* =========================================
-   TEXTURAS DE FUNDO (CLEAN & CRIATIVAS)
-   ========================================= */
-
-/* 1. SEÇÕES CONCEITO E SOLUÇÃO (Papel Quadriculado) */
-#problema, #conceito, #solucao {
-  background-color: var(--white);
-  /* Desenha linhas verticais e horizontais bem clarinhas (3% de opacidade) */
-  background-image: 
+#plano,
+.back-to-top:hover,
+.bg-yellow,
+.btn-outline:hover,
+.btn-primary,
+.card.highlight,
+.marker-yellow::after,
+.marquee-wrapper {
+  background-color: var(--primary-color);
+}
+.marker-lilac::after {
+  background-color: var(--secondary-color);
+}
+.bg-mint,
+.marker-mint::after {
+  background-color: var(--tertiary-color);
+}
+.bg-coral,
+.marker-coral::after,
+.nav-links a::after {
+  background-color: var(--accent-color);
+}
+#conceito,
+#problema,
+#solucao {
+  background-image:
     linear-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(26, 26, 26, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px; /* Tamanho do "quadradinho" da folha */
+  background-size: 40px 40px;
 }
-
-/* Garante que a borda de baixo se mantenha em ambas */
-#conceito { border-bottom: var(--border-width) solid var(--border-color); }
-#solucao { border-bottom: var(--border-width) solid var(--border-color); }
-
-
-/* 2. SEÇÃO DIFERENCIAL (Malha de Sinais de Adição / Plus Grid) */
+#conceito,
+#diferencial,
+#hero,
+#pacotes,
+body {
+  background-color: var(--bg-color);
+}
 #diferencial {
-  background-color: var(--bg-color); /* Fundo bege clarinho */
-  /* SVG injetado criando cruzes (+) minúsculas e charmosas no fundo */
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 15 L20 25 M15 20 L25 20' stroke='rgba(26,26,26,0.06)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-size: 40px 40px;
-  border-bottom: var(--border-width) solid var(--border-color);
 }
-
-
-/* 3. SEÇÃO CONTATO E FORMULÁRIO (Hachuras Diagonais) */
 #contato {
-  background-color: var(--white);
-  /* Cria riscos diagonais fininhos como se fosse um lápis sombreando o fundo */
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
     transparent 15px,
     rgba(26, 26, 26, 0.03) 15px,
-    rgba(26, 26, 26, 0.03) 16px /* Linha de 1px de espessura */
+    rgba(26, 26, 26, 0.03) 16px
   );
 }
-
-
-
-/* =========================================
-   2. RESETS E CONFIGURAÇÕES GERAIS
-   ========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
-  scroll-behavior: smooth; /* Rolagem suave ao clicar nos links âncora */
+  scroll-behavior: smooth;
 }
-
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
   font-family: var(--font-body);
   line-height: 1.6;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-
-/* Tipografia Básica */
-h1, h2, h3, h4 {
+.back-to-top,
+.btn,
+.card-badge,
+.footer-links a,
+.form-group label,
+.marquee-item,
+.nav-links a,
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-headings);
-  color: var(--text-color);
-  font-weight: 600;
+}
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.2;
 }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-h3 { font-size: 1.5rem; }
-
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+.btn,
 p {
   font-size: 1.1rem;
+}
+p {
   margin-bottom: 1rem;
 }
-
 a {
   text-decoration: none;
-  color: var(--text-color);
 }
-
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-color);
+  border-radius: 0.5em;
+  outline-offset: 4px;
+}
 ul {
   list-style: none;
 }
-
 .img-container-problema img {
- width: 60%;
+  width: 60%;
 }
-
 .img-container-evolucao img {
   width: 70%;
   max-width: 380px;
 }
-
-/* =========================================
-   3. ESTRUTURA E CONTAINERS
-   ========================================= */
 .container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 section {
   padding: var(--section-padding);
 }
-
-/* =========================================
-   4. LAYOUTS UTILITÁRIOS
-   ========================================= */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: center;
 }
-
-.text-center {
-  text-align: center;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -204,509 +254,350 @@ section {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
-/* =========================================
-   5. BOTÕES (O visual Hand-Drawn / WhatsApp)
-   ========================================= */
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  font-family: var(--font-headings);
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  border-radius: var(--border-radius-btn); /* Arredondado */
-  border: var(--border-width) solid var(--border-color); /* Borda preta grossa */
-  box-shadow: var(--sketch-shadow); /* Sombra dura de desenho */
+  border-radius: var(--border-radius-btn);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--sketch-shadow);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   margin-top: 15px;
 }
-
+#plano,
+.back-to-top,
+.btn-clear,
+.card-badge,
+.marquee-item {
+  font-weight: 700;
+}
+.card,
+.sketch-img {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-card);
+}
 .btn:hover {
-  transform: translate(2px, 2px); /* Efeito de ser pressionado */
+  transform: translate(2px, 2px);
   box-shadow: var(--sketch-shadow-hover);
 }
-
-/* Botão Amarelo de Destaque */
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-}
-
 .btn-primary:hover {
   background-color: var(--primary-hover);
 }
-
-/* Botão Transparente com Borda */
 .btn-outline {
   background-color: transparent;
-  color: var(--text-color);
 }
-
-.btn-outline:hover {
-  background-color: var(--primary-color);
-}
-
-/* =========================================
-   6. IMAGENS ESTILO SKETCH (Desenhado)
-   ========================================= */
+#problema,
+#solucao,
+.card,
 .sketch-img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius-card);
-  box-shadow: var(--sketch-shadow-card);
   background-color: var(--white);
+}
+.sketch-img {
+  box-shadow: var(--sketch-shadow-card);
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
 }
-
-/* Animação flutuante sutil para a imagem do Hero */
 .anim-float {
-  animation: float 4s ease-in-out infinite;
+  animation: 4s ease-in-out infinite float;
 }
-
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
-
-/* =========================================
-   7. HEADER E NAVEGAÇÃO (MOLDURA ESCURA)
-   ========================================= */
 #header.dark-header {
   padding: 15px 0;
-  background-color: var(--text-color); /* Fundo escuro */
-  border-bottom: 1.5px solid var(--primary-color); 
+  border-bottom: 1.5px solid var(--primary-color);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
+#conceito .container,
+#problema .container,
+.nav-links a {
+  position: relative;
+  z-index: 1;
+}
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* Inverte a cor da logo para branco (se ela for preta) */
-.logo-invert { filter: invert(1)}
-
 .logo-img {
-  height: 40px; 
+  height: 40px;
   width: auto;
   display: block;
   position: relative;
   z-index: 2;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
-
-/* ==== NAVEGAÇÃO (NAV) ==== */
-.desktop-nav { display: flex; }
-
+.desktop-nav,
 .nav-links {
   display: flex;
-  gap: 25px;
-  align-items: center;
 }
-
+#conceito .container::after,
+#conceito .container::before,
+#problema .container::after,
+#problema .container::before,
+.nav-links a::after,
+.sticker {
+  position: absolute;
+  z-index: -1;
+}
 .nav-links a {
   color: var(--white);
-  font-family: var(--font-headings);
   font-size: 1.05rem;
-  font-weight: 600;
-  position: relative;
-  z-index: 1;
   padding: 0 5px;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
-
-/* Risco do marca-texto Amarelo nos links */
 .nav-links a::after {
-  content: '';
-  position: absolute;
+  content: "";
   bottom: 2px;
   left: 0;
   width: 100%;
   height: 8px;
-  background-color: var(--accent-color); 
-  z-index: -1;
   border-radius: 4px;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-.nav-links a:hover::after { transform: scaleX(1); }
-
-
-
-/* ==== AÇÕES (DIREITA) ==== */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
-
-/* Botão WhatsApp no Dark Header */
 .header-btn-wa {
   margin-top: 0;
   padding: 10px 24px;
   font-size: 1rem;
   border-color: var(--white);
-  box-shadow: 3px 3px 0px var(--white);
+  box-shadow: 3px 3px 0 var(--white);
 }
-
 .header-btn-wa:hover {
-  box-shadow: 1px 1px 0px #333;
+  box-shadow: 1px 1px 0 #333;
   border-color: #333;
   transform: translate(2px, 2px);
 }
-
-/* Responsividade */
-@media (max-width: 950px) {
-  .desktop-nav { display: none; }
-}
-
-/* =========================================
-   8. HERO SECTION & CONTRASTE
-   ========================================= */
-#hero {
-  padding: 100px 0;
-  /* Cria contraste com o header branco */
-  background-color: var(--bg-color); 
-  /* Efeito "Caderno de Esboço" (Pontilhados no fundo) */
-  background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
-  background-size: 24px 24px; /* Distância entre os pontinhos */
+#conceito,
+#diferencial,
+#hero,
+#pacotes,
+#problema,
+#solucao {
   border-bottom: var(--border-width-sections) solid var(--border-color-sections);
 }
-
+#footer,
+.marquee-wrapper {
+  border-top: var(--border-width) solid var(--border-color);
+}
 #hero h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
 }
-
 #hero p {
   font-size: 1.25rem;
   margin-bottom: 30px;
-  color: #333; /* Um pouco mais escuro para ler bem em cima dos pontinhos */
+  color: #333;
 }
-
-/* =========================================
-   9. SEÇÕES (CONTRASTE DE FUNDO)
-   ========================================= */
-/* O Problema volta para o fundo branco para contrastar com o Hero (que tem pontinhos) */
-#problema {
-  background-color: var(--white);
-  border-bottom: var(--border-width-sections) solid var(--border-color-sections);}
-
-/* O Conceito usa o fundo Off-white, criando um efeito de listras horizontais grandes no site */
-#conceito {
-  background-color: var(--bg-color);
-  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
+#diferencial p,
+#pacotes p {
+  font-size: 1.2rem;
 }
-
-/* =========================================
-   10. ADESIVOS DE FUNDO (ESTILO WHATSAPP)
-   ========================================= */
-
-/* Prepara os containers para segurar os adesivos */
-#problema .container,
-#conceito .container {
-  position: relative;
-  z-index: 1; /* Garante que os adesivos fiquem atrás do texto principal */
-}
-
-/* Estilo base para todos os adesivos */
 .sticker {
-  position: absolute;
-  z-index: -1;
   filter: drop-shadow(4px 4px 0px var(--border-color));
-  opacity: 0.85; /* Levemente transparente para não atrapalhar a leitura */
-  animation: float-sticker 6s ease-in-out infinite;
+  opacity: 0.85;
+  animation: 6s ease-in-out infinite float-sticker;
 }
-
 @keyframes float-sticker {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
 }
-
-/* -----------------------------------------
-   ADESIVOS DA SEÇÃO: PROBLEMA
-   ----------------------------------------- */
-/* Adesivo 1: Raio (Coral) no canto superior esquerdo */
 #problema .container::before {
-  content: '';
-  position: absolute;
   top: -30px;
   left: -20px;
   width: 60px;
   height: 60px;
-  z-index: -1;
-  filter: drop-shadow(3px 3px 0px var(--border-color));
-  animation: float-sticker 5s ease-in-out infinite;
-  /* Código SVG do Raio */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6B6B' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E") no-repeat center;
+  animation: 5s ease-in-out infinite float-sticker;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6B6B' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E")
+    center no-repeat;
   transform: rotate(-15deg);
 }
-
-/* Adesivo 2: Balão de exclamação (Amarelo) no canto inferior direito */
 #problema .container::after {
-  content: '';
-  position: absolute;
-  bottom: 0px;
+  bottom: 0;
   right: -10px;
   width: 70px;
   height: 70px;
-  z-index: -1;
-  filter: drop-shadow(3px 3px 0px var(--border-color));
-  animation: float-sticker 7s ease-in-out infinite reverse;
-  /* Código SVG do Balão */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFDE59' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E") no-repeat center;
+  animation: 7s ease-in-out infinite reverse float-sticker;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFDE59' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E")
+    center no-repeat;
   transform: rotate(10deg);
 }
-
-/* -----------------------------------------
-   ADESIVOS DA SEÇÃO: CONCEITO
-   ----------------------------------------- */
-/* Adesivo 3: Estrela (Menta) no canto superior direito */
 #conceito .container::before {
-  content: '';
-  position: absolute;
   top: -20px;
   right: 10%;
   width: 50px;
   height: 50px;
-  z-index: -1;
-  filter: drop-shadow(3px 3px 0px var(--border-color));
-  animation: float-sticker 6s ease-in-out infinite;
-  /* Código SVG da Estrela */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306D6A0' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E") no-repeat center;
+  animation: 6s ease-in-out infinite float-sticker;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306D6A0' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E")
+    center no-repeat;
   transform: rotate(20deg);
 }
-
-/* Adesivo 4: Seta desenhada (Lilás) apontando para o texto */
 #conceito .container::after {
-  content: '';
-  position: absolute;
   bottom: 20%;
   left: -30px;
   width: 60px;
   height: 60px;
-  z-index: -1;
-  filter: drop-shadow(3px 3px 0px var(--border-color));
-  animation: float-sticker 5s ease-in-out infinite reverse;
-  /* Código SVG da Seta Desenhada */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A084E8' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") no-repeat center;
+  animation: 5s ease-in-out infinite reverse float-sticker;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A084E8' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E")
+    center no-repeat;
   transform: rotate(-30deg);
 }
-
-/* Esconde os adesivos no celular se a tela for muito pequena para não poluir */
-@media (max-width: 768px) {
-  #problema .container::before,
-  #problema .container::after,
-  #conceito .container::before,
-  #conceito .container::after {
-    display: none;
-  }
-}
-
-/* =========================================
-   11. ANIMAÇÕES DE SURGIMENTO (SCROLL REVEAL)
-   ========================================= */
 .reveal {
   opacity: 0;
-  /* Começa um pouco mais para baixo e levemente encolhido */
-  transform: translateY(40px) scale(0.95); 
-  /* A mágica do "pulo" cartoonesco está neste cubic-bezier */
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(40px) scale(0.95);
+  transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-
-/* Classes para fazer elementos surgirem um depois do outro (efeito escadinha) */
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.30s; }
-.delay-3 { transition-delay: 0.45s; }
-
-/* =========================================
-   12. SEÇÃO SOLUÇÃO E CARROSSEL INFINITO
-   ========================================= */
+.delay-1 {
+  transition-delay: 0.15s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.45s;
+}
+.card,
+.clean-note {
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
 #solucao {
-  background-color: var(--white);
-  padding: 80px 0 100px 0; /* Mais espaço embaixo para caber a faixa torta */
-  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
+  padding: 80px 0 100px;
 }
-
-#solucao .container {
-  margin-bottom: 50px;
-}
-
-/* Evita que a faixa crie uma barra de rolagem horizontal no site */
-.overflow-hidden {
-  overflow-x: hidden;
-}
-
-/* A Faixa (Fita colada de fora a fora) */
 .marquee-wrapper {
-  background-color: var(--primary-color); /* Amarelo chamativo */
-  border-top: var(--border-width) solid var(--border-color);
   border-bottom: var(--border-width) solid var(--border-color);
   padding: 15px 0;
   display: flex;
   white-space: nowrap;
   position: relative;
-  /* MÁGICA: Rotaciona a fita e estica ela além da tela para não mostrar os cantos cortados */
-  transform: rotate(-3deg) scale(1.05); 
+  transform: rotate(-3deg) scale(1.05);
   box-shadow: 0 10px 0 rgba(26, 26, 26, 0.05);
 }
-
-/* A pista onde os itens correm */
 .marquee-track {
   display: flex;
-  gap: 3rem; /* Espaço entre as palavras */
+  gap: 3rem;
   align-items: center;
   width: max-content;
-  /* 25 segundos para dar a volta, constante (linear) e infinito */
-  animation: scroll-marquee 25s linear infinite;
+  animation: 25s linear infinite scroll-marquee;
 }
-
-/* Efeito Bônus: Se o usuário passar o mouse, a faixa pausa para ele ler */
 .marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
 }
-
-/* Os textos dos serviços */
 .marquee-item {
-  font-family: var(--font-headings);
   font-size: 1.5rem;
-  font-weight: 700;
   color: var(--text-color);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-/* A estrelinha que separa os serviços */
+#footer,
+.marquee-star {
+  color: var(--bg-color);
+}
 .marquee-star {
   font-size: 1.8rem;
-  color: var(--bg-color); /* Fica clarinha */
-  -webkit-text-stroke: 2px var(--border-color); /* Ganha borda preta (Traço) */
+  -webkit-text-stroke: 2px var(--border-color);
 }
-
-/* A animação de rolagem */
 @keyframes scroll-marquee {
-  0% { transform: translateX(0); }
-  /* Ele rola exatamente 50% (o tamanho do Conjunto 1).
-     Como o Conjunto 2 é idêntico, o salto para o 0% é invisível! */
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-
-/* =========================================
-   13. SEÇÃO DE PACOTES (CARDS DE PLANOS)
-   ========================================= */
-#pacotes {
-  background-color: var(--bg-color);
-  padding: 100px 0;
-  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
-  background-image: radial-gradient(#d1d1d1 2px, transparent 2px);
-  background-size: 24px 24px;
-}
-
-#pacotes p {
-  font-size: 1.2rem;
-  margin-bottom: 50px;
-}
-
-/* O Grid que alinha os 3 cards lado a lado */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  align-items: stretch; /* Faz todos os cards terem a mesma altura */
+  align-items: stretch;
 }
-
-/* O Card Base (Cartão em branco) */
 .card {
-  background-color: var(--white);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius-card);
   padding: 40px 30px;
-  box-shadow: var(--sketch-shadow-card); /* Sombra pesada */
+  box-shadow: var(--sketch-shadow-card);
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
 }
-
-/* Efeito ao passar o mouse no Card */
+#plano:focus,
+.card-badge,
+.form-group input,
+.form-group textarea {
+  box-shadow: 4px 4px 0 var(--border-color);
+}
 .card:hover {
-  transform: translateY(-10px); /* O card levanta */
-  box-shadow: 12px 12px 0px var(--border-color); /* A sombra aumenta */
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 0 var(--border-color);
 }
-
-/* O Card em Destaque (Fundo Amarelo) */
 .card.highlight {
-  background-color: var(--primary-color);
-  transform: scale(1.05); /* Um pouquinho maior que os outros */
-  z-index: 2; /* Fica por cima */
+  transform: scale(1.05);
+  z-index: 2;
 }
-
 .card.highlight:hover {
   transform: scale(1.05) translateY(-10px);
 }
-
-/* Selo "Mais Escolhido" estilo post-it */
 .card-badge {
   position: absolute;
   top: -20px;
   right: -20px;
-  background-color: var(--accent-color); /* Coral vibrante */
+  background-color: var(--accent-color);
   color: var(--white);
-  font-family: var(--font-headings);
-  font-weight: 700;
   padding: 8px 16px;
   border: var(--border-width) solid var(--border-color);
   border-radius: 20px;
-  transform: rotate(10deg); /* Colado torto */
-  box-shadow: 4px 4px 0px var(--border-color);
+  transform: rotate(10deg);
   z-index: 3;
 }
-
-/* Textos dentro do Card */
 .card-header {
   margin-bottom: 25px;
   padding-bottom: 20px;
-  border-bottom: 2px dashed var(--border-color); /* Linha tracejada separando o cabeçalho */
+  border-bottom: 2px dashed var(--border-color);
 }
-
+.clean-note,
+.sketch-form {
+  border: var(--border-width) solid var(--border-color);
+  background-attachment: local;
+}
 .card h3 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
 .target-audience {
   font-size: 1rem !important;
   color: #555;
   margin-bottom: 0 !important;
   line-height: 1.4;
 }
-
-/* A Lista de Benefícios (Checklist) */
+.btn-clear,
+.card.highlight .btn-primary {
+  color: var(--white);
+}
 .card-features {
-  flex-grow: 1; /* Empurra o botão pro fundo */
+  flex-grow: 1;
   margin-bottom: 30px;
 }
-
 .card-features li {
   position: relative;
   padding-left: 35px;
@@ -714,115 +605,75 @@ section {
   font-size: 1.05rem;
   color: var(--text-color);
 }
-
-/* Criando o ícone de Check (✔️) com CSS (Super leve) */
 .card-features li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 4px;
   width: 22px;
   height: 22px;
-  /* SVG do Visto (Check) */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306D6A0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
-  background-size: contain;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306D6A0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 }
-
-/* Modifica a cor do Check no card amarelo para dar contraste */
 .card.highlight .card-features li::before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A1A' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A1A' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center no-repeat;
 }
-
-/* Botão ocupando 100% da largura no final do card */
 .card-btn {
   width: 100%;
 }
-
-/* Botão escuro no card em destaque (para dar contraste com o fundo amarelo) */
-.card.highlight .btn-primary {
-  background-color: var(--text-color);
-  color: var(--white);
-}
-
 .card.highlight .btn-primary:hover {
   background-color: var(--white);
   color: var(--text-color);
 }
-
-/* Responsividade: Quebrando os cards no celular e tablet */
 @media (max-width: 1024px) {
   .cards-grid {
-    grid-template-columns: 1fr; /* 1 coluna no celular */
-    gap: 50px; /* Mais espaço vertical */
+    grid-template-columns: 1fr;
+    gap: 50px;
     max-width: 500px;
     margin: 0 auto;
   }
-  
   .card.highlight {
-    transform: scale(1); /* Tira o aumento de tamanho no celular para não bugar a tela */
+    transform: scale(1);
   }
-
   .card.highlight:hover {
     transform: translateY(-5px);
   }
 }
-
-/* =========================================
-   14. SEÇÃO DIFERENCIAL (VERSÃO CLEAN)
-   ========================================= */
-#diferencial {
-  background-color: var(--bg-color); /* Fundo bege claro do site para dar contraste com os cards brancos */
-  padding: 100px 0;
-  border-bottom: var(--border-width-sections) solid var(--border-color-sections);
-}
-
 #diferencial p {
-  font-size: 1.2rem;
   margin-bottom: 40px;
 }
-
-/* Grid para os cards */
 .diferencial-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 20px 0;
 }
-
-/* Base do Card Clean com fundo de folha de caderno suave */
 .clean-note {
   position: relative;
   background-color: var(--white);
-  
-  /* Efeito de linhas de caderno bem suaves (apenas 4% de opacidade no preto) */
   background-image: repeating-linear-gradient(
-    transparent, 
-    transparent 28px, 
-    rgba(0, 0, 0, 0.04) 28px, 
-    rgba(0, 0, 0, 0.04) 29px /* Linha fina de 1px */
+    transparent,
+    transparent 28px,
+    rgba(0, 0, 0, 0.04) 28px,
+    rgba(0, 0, 0, 0.04) 29px
   );
-  background-attachment: local; /* Faz a linha rolar junto com o texto caso tenha muito conteúdo */
-  
-  padding: 40px 30px 30px 30px;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: 8px; 
-  box-shadow: var(--sketch-shadow); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 40px 30px 30px;
+  border-radius: 8px;
+  box-shadow: var(--sketch-shadow);
   z-index: 1;
 }
-
-/* Rotação quase imperceptível só para dar um charme (1 grau) */
-.clean-note:nth-child(odd) { transform: rotate(-1deg); }
-.clean-note:nth-child(even) { transform: rotate(1deg); }
-
-/* Hover: levanta suavemente */
+.clean-note:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+.clean-note:nth-child(2n) {
+  transform: rotate(1deg);
+}
 .clean-note:hover {
-  transform: translateY(-5px) rotate(0deg);
-  box-shadow: 8px 8px 0px var(--border-color);
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 8px 8px 0 var(--border-color);
   z-index: 10;
 }
-
-/* O pedaço de Fita (Tape) - Agora mais sutil e realista */
 .tape {
   position: absolute;
   top: -12px;
@@ -830,12 +681,10 @@ section {
   transform: translateX(-50%);
   width: 60px;
   height: 24px;
-  background-color: #E8E8E8; /* Cinza bem clarinho (fita crepe) */
+  background-color: #e8e8e8;
   border: 1px solid rgba(26, 26, 26, 0.5);
-  box-shadow: 1px 1px 0px rgba(26, 26, 26, 0.2);
+  box-shadow: 1px 1px 0 rgba(26, 26, 26, 0.2);
 }
-
-/* Os círculos coloridos contidos atrás dos ícones */
 .icon-circle {
   display: inline-flex;
   justify-content: center;
@@ -846,95 +695,61 @@ section {
   border: 2px solid var(--border-color);
   font-size: 1.5rem;
   margin-bottom: 20px;
-  box-shadow: 2px 2px 0px var(--border-color);
+  box-shadow: 2px 2px 0 var(--border-color);
 }
-
-/* As cores aplicadas APENAS nos círculos */
-.bg-yellow { background-color: var(--primary-color); }
-.bg-mint   { background-color: var(--tertiary-color); }
-.bg-blue   { background-color: var(--highlight-color); }
-.bg-coral  { background-color: var(--accent-color); }
-
+.bg-blue {
+  background-color: var(--highlight-color);
+}
 .clean-note h3 {
   font-size: 1.5rem;
   margin-bottom: 12px;
 }
-
 .clean-note p {
   font-size: 1.05rem;
   margin-bottom: 0 !important;
-  color: #444; /* Cinza escuro para leitura confortável */
+  color: #444;
   line-height: 1.6;
 }
-
-/* Responsivo para celulares (Grid vira 1 coluna) */
-@media (max-width: 768px) {
-  .diferencial-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-/* =========================================
-   15. FORMULÁRIO DE CONTATO E ORÇAMENTO
-   ========================================= */
-#contato {
-  background-color: var(--white);
-  padding: 100px 0;
-}
-
 .honey-field {
-  /* Não usamos display: none pois alguns robôs espertos detectam isso.
-     Em vez disso, jogamos o campo para fora do planeta Terra invisível. */
   position: absolute;
   left: -9999px;
   top: -9999px;
   opacity: 0;
   z-index: -1;
 }
-
 .contato-text h2 {
   font-size: 3rem;
 }
-
 .contato-lista {
   margin-top: 30px;
 }
-
 .contato-lista li {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 15px;
   color: #444;
 }
-
-/* O "Caderno" do Formulário */
 .sketch-form {
-  background-color: var(--bg-color); /* Bege/Off-white */
-  border: var(--border-width) solid var(--border-color);
+  background-color: var(--bg-color);
   border-radius: var(--border-radius-card);
   padding: 40px;
   box-shadow: var(--sketch-shadow-card);
-  /* Efeito caderno espiral na borda esquerda */
-  background-image: repeating-linear-gradient(transparent, transparent 28px, #ccc 28px, #ccc 30px);
-  background-attachment: local;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    #ccc 28px,
+    #ccc 30px
+  );
 }
-
-/* Grupos de Inputs */
 .form-group {
   margin-bottom: 25px;
 }
-
 .form-group label {
   display: block;
-  font-family: var(--font-headings);
-  font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 8px;
   color: var(--text-color);
 }
-
-/* Campos de digitação (Inputs e Textarea) */
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -945,271 +760,375 @@ section {
   background-color: var(--white);
   border: var(--border-width) solid var(--border-color);
   border-radius: 8px;
-  box-shadow: 4px 4px 0px var(--border-color); /* Sombra dura de desenho */
-  transition: all 0.2s ease;
-  outline: none;
+  transition: 0.2s;
+  outline: 0;
 }
-
 .form-group textarea {
-  resize: vertical; /* Permite esticar só para baixo */
+  resize: vertical;
   min-height: 120px;
 }
-
-/* Efeito ao clicar para digitar (Foco) */
 .form-group input:focus,
 .form-group textarea:focus {
-  transform: translate(3px, 3px); /* Campo "afunda" */
-  box-shadow: 1px 1px 0px var(--border-color); /* Sombra diminui */
-  background-color: #ffffe0; /* Fica levemente amarelinho para destacar */
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--border-color);
+  background-color: #ffffe0;
 }
-
-/* Ajustes do Input do Plano Selecionado (Bloqueado) */
 .input-plano-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
-
 #plano {
-  background-color: var(--primary-color); /* Amarelo da sua paleta */
-  font-weight: 700;
-  cursor: not-allowed; /* Mostra que não pode editar */
+  cursor: not-allowed;
 }
-
 #plano:focus {
   transform: none;
-  box-shadow: 4px 4px 0px var(--border-color);
 }
-
-/* Botãozinho de limpar/remover o plano */
 .btn-clear {
   position: absolute;
   right: 15px;
   background: var(--accent-color);
-  color: var(--white);
   border: 2px solid var(--border-color);
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s;
+  transition: 0.2s;
 }
-
+.back-to-top,
+.social-btn {
+  color: var(--text-color);
+  box-shadow: 3px 3px 0 var(--primary-color);
+  transition: 0.2s;
+}
 .btn-clear:hover {
   transform: scale(1.1);
 }
-
-/* Botão de Enviar gigante */
+.back-to-top:hover,
+.social-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--primary-color);
+}
 .form-submit-btn {
   width: 100%;
   font-size: 1.2rem;
   padding: 18px;
   margin-top: 10px;
 }
-
-/* Responsivo do Formulário */
-@media (max-width: 768px) {
-  .sketch-form {
-    padding: 25px 20px;
-  }
-}
-
-/* =========================================
-   16. FOOTER (RODAPÉ)
-   ========================================= */
 #footer {
-  background-color: var(--text-color); /* Fundo escuro */
-  color: var(--bg-color); /* Texto claro */
-  padding: 80px 0 30px 0;
-  border-top: var(--border-width) solid var(--border-color);
+  padding: 80px 0 30px;
 }
-
-#footer h2, 
+#footer h2,
 #footer h3 {
   color: var(--white);
   margin-bottom: 20px;
 }
-
 #footer p {
-  color: #E0E0E0; /* Cinza clarinho para leitura confortável no fundo preto */
+  color: #e0e0e0;
   max-width: 400px;
 }
-
-/* Ícones Sociais (Estilo Adesivos) */
 .social-links {
   display: flex;
   gap: 15px;
   margin-top: 30px;
 }
-
 .social-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 45px;
   height: 45px;
-  border-radius: 8px; /* Quadrado levemente arredondado */
-  border: 2px solid var(--border-color); /* Borda preta, mesmo no fundo escuro, para manter o traço do desenho */
-  color: var(--text-color);
-  box-shadow: 3px 3px 0px var(--primary-color); /* A sombra é AMARELA para brilhar no fundo escuro! */
-  transition: all 0.2s ease;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
 }
-
 .social-btn svg {
   width: 22px;
   height: 22px;
 }
-
-.social-btn:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--primary-color);
-}
-
-/* Links Rápidos */
 .footer-links ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 .footer-links a {
-  color: #E0E0E0;
-  font-family: var(--font-headings);
+  color: #e0e0e0;
   font-size: 1.1rem;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
 }
-
-/* Efeito de setinha ao passar o mouse no link */
 .footer-links a:hover {
   color: var(--primary-color);
-  padding-left: 8px; /* Dá um passinho para a direita */
+  padding-left: 8px;
 }
-
 .footer-links a::before {
-  content: '>';
+  content: ">";
   color: var(--primary-color);
   margin-right: 8px;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s;
 }
-
 .footer-links a:hover::before {
   opacity: 1;
 }
-
-/* Linha Final de Copyright */
 .footer-bottom {
   margin-top: 60px;
   padding-top: 30px;
-  border-top: 2px dashed rgba(255, 255, 255, 0.2); /* Linha tracejada clarinha separando */
+  border-top: 2px dashed rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+.hero-drop-img,
+.sketch-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 .footer-bottom p {
   margin: 0;
   font-size: 0.9rem;
 }
-
-/* Botão de Voltar ao Topo */
 .back-to-top {
   background-color: var(--white);
-  color: var(--text-color);
-  font-family: var(--font-headings);
-  font-weight: 700;
   padding: 8px 16px;
   border: 2px solid var(--border-color);
   border-radius: 20px;
-  box-shadow: 3px 3px 0px var(--primary-color);
-  transition: all 0.2s ease;
 }
-
-.back-to-top:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px var(--primary-color);
-  background-color: var(--primary-color);
+.hero-drop-img {
+  max-width: 550px;
+  filter: drop-shadow(8px 8px 0px var(--border-color));
+  border: none;
+  background-color: transparent;
 }
-
-/* Responsivo do Footer */
 @media (max-width: 768px) {
+  .diferencial-grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  #conceito .container::after,
+  #conceito .container::before,
+  #problema .container::after,
+  #problema .container::before {
+    display: none;
+  }
+  .diferencial-grid {
+    gap: 40px;
+  }
+  .sketch-form {
+    padding: 25px 20px;
+  }
   .footer-bottom {
     flex-direction: column;
     gap: 20px;
     text-align: center;
   }
-}
-
-/* =========================================
-   IMAGEM COM SOMBRA DROP-SHADOW (Contorno do PNG)
-   ========================================= */
-.hero-drop-img {
-  width: 100%;
-  max-width: 550px; /* Tamanho limite da imagem */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  /* A MÁGICA: Em vez de box-shadow, usamos drop-shadow para seguir o corte do PNG */
-  filter: drop-shadow(8px 8px 0px var(--border-color));
-  /* Removemos bordas e fundos para o PNG ficar limpo */
-  border: none;
-  background-color: transparent;
-}
-
-/* =========================================
-   RESPONSIVO BÁSICO PARA O GRID
-   ========================================= */
-@media (max-width: 768px) {
   .grid-2 {
-    grid-template-columns: 1fr;
     text-align: center;
   }
-  
   .grid-2.reverse .section-img-container {
-    order: -1; /* Faz a imagem subir no mobile */
+    order: -1;
   }
-
   #hero h2 {
     font-size: 2.5rem;
   }
-  
   #header nav {
     flex-direction: column;
     gap: 15px;
   }
 }
-
-/* =========================================
-   ESTILOS DE IMAGEM JPG (Scrapbook / Fotos coladas)
-   ========================================= */
-/* (A classe .sketch-img já deve ter border e box-shadow que criamos antes) */
 .sketch-img {
-  width: 100%;
   max-width: 500px;
-  height: auto;
   border: var(--border-width) solid var(--border-color);
-  border-radius: 8px; /* Borda um pouco menos redonda, parecendo uma foto revelada */
+  border-radius: 8px;
   box-shadow: var(--sketch-shadow-card);
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
-
-/* Efeito Scrapbook: Rotaciona levemente as fotos */
 .rotate-left {
   transform: rotate(-3deg);
 }
-
 .rotate-right {
   transform: rotate(3deg);
 }
-
-/* Efeito Hover: Quando passa o mouse, a foto "desentorta" e vem pra frente */
-.rotate-left:hover, .rotate-right:hover {
-  transform: rotate(0deg) scale(1.03);
-  box-shadow: 12px 12px 0px var(--border-color); /* A sombra aumenta para parecer mais alta */
+.rotate-left:hover,
+.rotate-right:hover {
+  transform: rotate(0) scale(1.03);
+  box-shadow: 12px 12px 0 var(--border-color);
+}
+.success-box {
+  background-color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+.success-box h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+.success-box p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 400px;
+}
+.mt-3 {
+  margin-top: 20px;
+}
+.rocket-wrapper {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+}
+#rocket-icon {
+  display: inline-block;
+  transform-origin: bottom left;
+}
+.fly-animation {
+  animation: 2.5s ease-in-out forwards rocket-launch;
+}
+@keyframes rocket-launch {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  15%,
+  5% {
+    transform: translate(-3px, 3px) rotate(-2deg);
+  }
+  10%,
+  20% {
+    transform: translate(3px, -3px) rotate(2deg);
+  }
+  40% {
+    transform: translate(0, -20px) rotate(0);
+  }
+  100% {
+    transform: translate(200px, -400px) rotate(45deg) scale(0.5);
+    opacity: 0;
+  }
+}
+.header-inner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.floating-wa,
+.logo-reduced,
+.menu-toggle {
+  display: none;
+}
+.logo-full {
+  display: block;
+}
+.logo-invert {
+  filter: invert(1);
+}
+.main-nav {
+  display: block !important;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+}
+@media (max-width: 950px) {
+  .main-nav,
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .logo-full {
+    display: none;
+  }
+  .logo-reduced {
+    display: block;
+    height: 35px;
+  }
+  .header-btn-wa {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: block;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    padding: 5px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .menu-toggle.active span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--text-color);
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.3s;
+    z-index: 99;
+  }
+  .main-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-links {
+    flex-direction: column !important;
+    padding: 30px 0;
+    gap: 25px;
+  }
+  .floating-wa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    box-shadow: 4px 4px 0 var(--border-color);
+    z-index: 999;
+    transition: 0.2s;
+  }
+  .floating-wa svg {
+    width: 30px;
+    height: 30px;
+  }
+  .floating-wa:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--border-color);
+  }
 }
