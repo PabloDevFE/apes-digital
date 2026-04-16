@@ -17,7 +17,6 @@
 #problema,
 #solucao {
   background-color: var(--white);
-  background-color: var(--white);
 }
 .btn-outline,
 .btn-primary,
@@ -335,16 +334,11 @@ section {
   z-index: 2;
   transition: transform 0.2s;
 }
-.desktop-nav,
-.nav-links {
-  display: flex;
-}
 #conceito .container::after,
 #conceito .container::before,
 #problema .container::after,
 #problema .container::before,
-.nav-links a::after,
-.sticker {
+.nav-links a::after {
   position: absolute;
   z-index: -1;
 }
@@ -404,11 +398,6 @@ section {
 #diferencial p,
 #pacotes p {
   font-size: 1.2rem;
-}
-.sticker {
-  filter: drop-shadow(4px 4px 0px var(--border-color));
-  opacity: 0.85;
-  animation: 6s ease-in-out infinite float-sticker;
 }
 @keyframes float-sticker {
   0%,
@@ -933,13 +922,6 @@ section {
   .grid-2.reverse .section-img-container {
     order: -1;
   }
-  #hero h2 {
-    font-size: 2.5rem;
-  }
-  #header nav {
-    flex-direction: column;
-    gap: 15px;
-  }
 }
 .sketch-img {
   max-width: 500px;
@@ -1015,11 +997,6 @@ section {
     opacity: 0;
   }
 }
-.header-inner {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
 .header-actions {
   display: flex;
   align-items: center;
@@ -1030,14 +1007,8 @@ section {
 .menu-toggle {
   display: none;
 }
-.logo-full {
-  display: block;
-}
 .logo-invert {
   filter: invert(1);
-}
-.main-nav {
-  display: block !important;
 }
 .nav-links {
   display: flex;
